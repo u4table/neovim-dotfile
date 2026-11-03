@@ -1,5 +1,6 @@
-require("nvim-treesitter").setup({
-	highlight = {
-		enabled = true,
-	},
-})
+-- require("nvim-treesitter.configs").setup({
+-- 	ensure_installed = { "go", "markdown", "markdown_inline" },
+-- 	highlight = {
+-- 		enable = true,
+-- 	},
+-- })

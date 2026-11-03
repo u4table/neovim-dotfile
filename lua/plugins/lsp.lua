@@ -13,6 +13,19 @@ vim.lsp.enable({
 
 vim.lsp.set_log_level("error")
 
+local open_floating_preview = vim.lsp.util.open_floating_preview
+vim.lsp.util.open_floating_preview = function(contents, syntax, opts)
+	local bufnr, win = open_floating_preview(contents, syntax, opts)
+	if opts and opts.focus_id == "textDocument/hover" and win and vim.api.nvim_win_is_valid(win) then
+		vim.api.nvim_set_option_value(
+			"winhighlight",
+			"Normal:BlinkCmpMenu,FloatBorder:BlinkCmpMenuBorder,EndOfBuffer:BlinkCmpMenu",
+			{ win = win }
+		)
+	end
+	return bufnr, win
+end
+
 -- Diagnostic setup
 vim.diagnostic.config({
 	virtual_text = true,

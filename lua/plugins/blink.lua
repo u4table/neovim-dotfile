@@ -35,6 +35,7 @@ require("blink.cmp").setup({
 			border = nil,
 			scrolloff = 1,
 			scrollbar = false,
+			winhighlight = "Normal:BlinkCmpMenu,FloatBorder:BlinkCmpMenuBorder,CursorLine:BlinkCmpMenuSelection,Search:None",
 			draw = {
 				components = {
 					kind_icon = {
@@ -70,5 +71,17 @@ require("blink.cmp").setup({
 		},
 	},
 })
+
+local function set_menu_highlights()
+	local h = vim.api.nvim_set_hl
+	h(0, "BlinkCmpMenu", { fg = "#d4d4d4", bg = "#333333" })
+	h(0, "BlinkCmpMenuBorder", { fg = "#333333", bg = "#333333" })
+	h(0, "BlinkCmpMenuSelection", { fg = "#d4d4d4", bg = "#264f78" })
+end
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+	callback = set_menu_highlights,
+})
+set_menu_highlights()
 
 require("luasnip.loaders.from_vscode").lazy_load()

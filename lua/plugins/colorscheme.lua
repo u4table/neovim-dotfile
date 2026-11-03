@@ -12,7 +12,7 @@ require("gruvbox").setup({
 	},
 	transparent_mode = true,
 	overrides = {
-		["GruvboxRed"] = { fg = "#FF6666" },
+		["GruvboxRed"] = { fg = "#ff6666" },
 		["Identifier"] = { fg = normalFg },
 		["Field"] = { fg = normalFg },
 		["Macro"] = { fg = normalFg },
@@ -20,12 +20,12 @@ require("gruvbox").setup({
 		["Normal"] = { fg = normalFg },
 		["Constant"] = { fg = normalFg },
 		["Character"] = { fg = normalFg },
-		["@lsp.type.method"] = { bg = "#ff9900" },
 	},
 })
 
 --vim.o.background = "dark" -- or "light" for light mode
 -- vim.cmd([[colorscheme vscode-mordern]])
 -- vim.cmd([[ colorscheme my-unokai ]])
-vim.cmd([[ colorscheme vscode_modern ]])
+-- vim.cmd([[ colorscheme vscode ]])
 -- vim.cmd([[ colorscheme darcula ]])
+vim.cmd([[ colorscheme gruvbox ]])

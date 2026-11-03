@@ -59,7 +59,7 @@ return require("packer").startup(function(use)
 	-- Telescope
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.8",
+		tag = "v0.2.2",
 		requires = {
 			{ "nvim-lua/plenary.nvim" },
 			{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
@@ -73,7 +73,7 @@ return require("packer").startup(function(use)
 	use({ "vishifu/nvim.vscode" })
 	use({
 		"nvim-treesitter/nvim-treesitter",
-		tag = "v0.10.0",
+		tag = 'v1.10.0'
 	})
 	use("gmr458/vscode_modern_theme.nvim")
 
